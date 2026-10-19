@@ -1,26 +1,142 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy-dark: #11182c;
+  --navy-deeper: #0b101e;
+  --yellow-accent: #f5d020;
+  --yellow-hover: #eab308;
+  --blue-bright: #2285f5;
+  --blue-deep: #1565c0;
+  --bg-light: #f8fafc;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 208, 32, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(245, 208, 32, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* Rich HTML content link & typography styling */
+.sheet-html p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.sheet-html p:last-child {
+  margin-bottom: 0;
+}
+
+.sheet-html a {
+  color: #2285f5;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.sheet-html a:hover {
+  color: #11182c;
+}
+
+.sheet-html-dark a {
+  color: #f5d020;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.sheet-html-dark a:hover {
+  opacity: 0.85;
+}
+
+.sheet-html-yellow a {
+  color: #11182c;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sheet-html-yellow a:hover {
+  opacity: 0.75;
+}
+
+.sheet-html ul,
+.sheet-html ol {
+  margin: 1rem 0 1.25rem 1.25rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.sheet-html ul {
+  list-style-type: disc;
+}
+
+.sheet-html ol {
+  list-style-type: decimal;
+}
+
+.sheet-html li {
+  line-height: 1.7;
+}
+
+.sheet-html h2 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #11182c;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+}
+
+.sheet-html h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #11182c;
+  margin-top: 1.35rem;
+  margin-bottom: 0.5rem;
 }
