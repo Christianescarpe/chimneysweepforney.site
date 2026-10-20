@@ -11,9 +11,29 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
 });
 
+export const SITE_URL = "https://www.chimneysweepforney.site";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: HOME_PAGE.seoTitle,
   description: HOME_PAGE.metaDescription,
+  verification: {
+    google: "fkSeJPld_qTX8g3m_gL1cO-Dc1-nAuid0q6Eere8QBo",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

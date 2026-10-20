@@ -5,6 +5,9 @@ import { HOME_PAGE } from "@/data/siteData";
 export const metadata: Metadata = {
   title: HOME_PAGE.seoTitle,
   description: HOME_PAGE.metaDescription,
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function HomePage() {

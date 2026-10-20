@@ -13,6 +13,9 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: `${BUSINESS_INFO.name} | Blogs`,
   description: HOME_PAGE.metaDescription,
+  alternates: {
+    canonical: "/blog/",
+  },
 };
 
 export default function BlogIndexPage() {

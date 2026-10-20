@@ -34,6 +34,9 @@ export async function generateMetadata({
   return {
     title: post.seoTitle,
     description: post.metaDescription,
+    alternates: {
+      canonical: post.slug,
+    },
   };
 }
 

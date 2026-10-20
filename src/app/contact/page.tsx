@@ -14,6 +14,9 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: `Contact | ${BUSINESS_INFO.name}`,
   description: HOME_PAGE.metaDescription,
+  alternates: {
+    canonical: "/contact/",
+  },
 };
 
 export default function ContactPage() {
